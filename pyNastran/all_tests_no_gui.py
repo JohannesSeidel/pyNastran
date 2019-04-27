@@ -31,11 +31,6 @@ from pyNastran.op4.test.op4_unit_tests import TestOP4
 from pyNastran.utils.test.all_tests import *
 from pyNastran.femutils.test.all_tests import *
 
-# converters
-from pyNastran.converters.test_formats import *
-
-#gui - just tests the imports
-from pyNastran.gui.test.all_tests import *
 #on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 #if not on_rtd:
     #import pyNastran.gui.gui

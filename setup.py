@@ -7,17 +7,12 @@ import pyNastran
 from packages import check_python_version, get_package_requirements
 
 check_python_version()
-install_requires = get_package_requirements(is_gui=True)
-packages = find_packages() + ['gui/icons/*.*']
+install_requires = get_package_requirements(is_gui=False)
+packages = find_packages()
 #print("packages = %s" % packages)
 
 # set up all icons
-icon_path = os.path.join('pyNastran', 'gui', 'icons')
-icon_files = os.listdir(icon_path)
 icon_files2 = []
-for icon_file in icon_files:
-    if icon_file.endswith('.png'):
-        icon_files2.append(os.path.join(icon_path, icon_file))
 
 exclude_words = [
     'pyNastran.dev.bdf_vectorized', 'pyNastran.dev.bdf_vectorized.cards',
@@ -67,11 +62,6 @@ setup(
             'test_bdf  = pyNastran.bdf.test.test_bdf:main',
             'test_op2  = pyNastran.op2.test.test_op2:main',
             'test_op4  = pyNastran.op4.test.test_op4:main',
-            #'test_abaqus = pyNastran.converters.abaqus.test_abaqus:main',
-            'test_pynastrangui = pyNastran.gui.test.test_gui:main',
-
-            'format_converter = pyNastran.converters.type_converter:cmd_line_format_converter',
-            'pyNastranGUI = pyNastran.gui.gui:cmd_line',
             'bdf = pyNastran.bdf.mesh_utils.utils:cmd_line',
             'f06 = pyNastran.f06.utils:cmd_line',
 
